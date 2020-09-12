@@ -4,7 +4,7 @@ class Flight():
 		self.passanger=[]
 	
 	def add_passanger(self, name):
-		if not self.open_seats:
+		if self.open_seats()<=0:
 			return False
 		self.passanger.append(name)
 		return True
@@ -13,7 +13,7 @@ class Flight():
 		return self.capacity - len(self.passanger)
 flight =  Flight(3)
 
-people = ["Harry", "Ron", "Hrmonie","Ginnie"]
+people = ["Harry", "Ron", "Hrmonie","Ginnie","Test"]
 
 for person in people:
 	success = flight.add_passanger(person)
